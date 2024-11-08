@@ -1,3 +1,13 @@
+'''
+NOTE: DEVELOPMENT STILL IN PROCESS! NOT ALL THE METHODS IN THE FILE ARE COMPLETELY DEFINED
+
+A NOTE ON THE FUNCTION OF THE SERVER:
+Current: The server can only forward messages and requests between parties
+Future prospects: 
+1. Store users in a local/hosted database and implement user authentication
+2. Give individual user an identification token (public), which can be shared with others to establish communication
+'''
+
 import json
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel
