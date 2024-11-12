@@ -8,13 +8,13 @@ from cryptography.fernet import Fernet
 import hashlib
 import base64
 
-# Function to select random bits and bases for Alice
+# Select random bits and bases for Alice
 def select_encoding(length):
     alice_bitstring = "".join([str(getrandbits(1)) for _ in range(length)])
     alice_bases = "".join([str(getrandbits(1)) for _ in range(length)])
     return alice_bitstring, alice_bases
 
-# Function to encode bits into qubits based on chosen bases
+#Encode bits into qubits based on chosen bases
 def encode(alice_bitstring, alice_bases):
     encoded_qubits = []
     for i in range(len(alice_bitstring)):
@@ -26,7 +26,7 @@ def encode(alice_bitstring, alice_bases):
         encoded_qubits.append(qc)
     return encoded_qubits
 
-# Function to reconcile the key by comparing bases
+# Reconcile the key by comparing bases
 def reconcile_key(alice_bases, bob_bases, alice_bitstring, bob_results):
     shared_key = []
     for i in range(len(alice_bases)):
@@ -84,5 +84,4 @@ async def start_qkd_with_bob(num_bits=10):
     qubit_data = [{"bit": bitstring[i], "basis": bases[i]} for i in range(num_bits)]
     await send_qubits_and_reconcile(qubit_data, bases, bitstring)
 
-# Run the program
 asyncio.run(start_qkd_with_bob())
