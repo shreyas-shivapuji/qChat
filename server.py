@@ -5,7 +5,7 @@ A NOTE ON THE FUNCTION OF THE SERVER:
 Current: The server can only forward messages and requests between parties
 Future prospects: 
 1. Store users in a local/hosted database and implement user authentication
-2. Give individual user an identification token (public), which can be shared with others to establish communication
+2. Give individual user an authentication token (public), which can be shared with others to establish communication
 '''
 
 import json
