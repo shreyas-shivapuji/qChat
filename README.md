@@ -1,1 +1,1 @@
-# qCryptochat
+# qChat
